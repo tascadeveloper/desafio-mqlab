@@ -1,5 +1,12 @@
+@import 'styles/_variables';
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
+// Importar modulos scss do spectre
+@import 'spectre.css/src/spectre';
+@import 'spectre.css/src/spectre-exp';
+@import 'spectre.css/src/spectre-icons';
