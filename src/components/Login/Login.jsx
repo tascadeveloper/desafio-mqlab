@@ -1,26 +1,17 @@
 import React from "react";
+import { connect } from 'react-redux'
+import { performLogin } from "./loginActions";
 
-function efetuarLogin() {
-    const payload = {
-        a: 1,
-        b: 2
+
+
+function Login (props) {
+
+    const efetuarLogin = () => {
+        const {performLogin, history} = props;
+        performLogin({usuario: 'mauricio', senha: '1234'}, history);
     };
 
-    const data = new FormData();
-    data.append( "json", JSON.stringify( payload ) );
-
-    fetch("/auth/login",
-        {
-            method: "POST",
-            body: data
-        })
-        .then(function(res){ return res.json(); })
-        .then(function(data){ alert( JSON.stringify( data ) ) })
-
-}
-
-const Login = () => (
-    <div className="app-content container grid-xl">
+    return <div className="app-content container grid-xl">
         <div className="column col-12 col-gapless px-0">
             <div className="empty">
                 <div className="empty-icon"><i className="icon icon-3x icon-people"/></div>
@@ -43,7 +34,24 @@ const Login = () => (
                 </div>
             </div>
         </div>
-    </div>
-);
+    </div>;
+}
 
-export default Login;
+const mapStateToProps = ({ loginReducer }) => ({
+    loginData: loginReducer.loginData,
+    isLoadingLogin: loginReducer.isLoadingLogin,
+    loginError: loginReducer.loginError
+});
+
+
+const mapDispatchToProps = dispatch => ({
+    performLogin: (userCredentials, history) => {
+        dispatch(performLogin(userCredentials, history));
+    }
+});
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Login)

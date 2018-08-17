@@ -4,9 +4,9 @@ import React from "react";
 import NotFound from "./components/NotFound";
 import Home from "./components/Home";
 
-const Main = () => (
+const Main = (props) => (
     <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' cookies={props.cookies} component={Home}/>
         <Route path="/login" component={Login} />
 
 

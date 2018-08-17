@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 class App extends Component {
     render() {
+        const {cookies} = this.props;
         return (
             <Fragment>
                 <header className="container grid-xl my-2 navbar">
@@ -17,7 +18,7 @@ class App extends Component {
                     </section>
                 </header>
 
-                <RouterOutlet/>
+                <RouterOutlet cookies={cookies}/>
 
 
                 <footer className="container grid-xl my-2">
