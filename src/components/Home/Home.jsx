@@ -4,6 +4,8 @@ import connect from "react-redux/es/connect/connect";
 
 const Home = (props) => {
 
+    console.log(props);
+
     const efetuarLogout = () =>{
         const {performLogout, history} = props;
         performLogout(document.cookies, history);
@@ -14,7 +16,7 @@ const Home = (props) => {
             <div className="empty">
                 <div className="empty-icon"><i className="icon icon-3x icon-people"/></div>
                 <p className="empty-title h5">Página Principal</p>
-                <p className="empty-title subtitle">Gerenciador Financeiro - Mastermaq</p>
+                <p className="empty-title subtitle">Gerenciador Financeiro</p>
                 <button onClick={efetuarLogout} className="btn btn-primary"><i className="icon icon-shutdown"/> Logout
                 </button>
             </div>

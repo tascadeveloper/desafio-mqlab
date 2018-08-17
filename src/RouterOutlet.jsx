@@ -1,18 +1,26 @@
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
-import React from "react";
 import NotFound from "./components/NotFound";
 import Home from "./components/Home";
+import ProtectedRoute from "./components/CustomRoutes/ProtectedRoute/ProtectedRoute";
 
-const Main = (props) => (
-    <Switch>
-        <Route exact path='/' cookies={props.cookies} component={Home}/>
-        <Route path="/login" component={Login} />
+import Logout from "./components/Login/Logout";
+
+const Main = (props) => {
+	const {cookies} = props;
+
+	return <Switch>
+		<ProtectedRoute cookies={cookies} exact path='/' component={Home} />
+
+		<Route exact path="/login" component={Login}/>
+
+		<Route exact path="/logout" component={Logout}/>
 
 
-        {/* Se nenhuma rota for encontrada, cair no componente de NotFound */}
-        <Route path="/*" component={NotFound} />
-    </Switch>
-);
+		{/* Se nenhuma rota for encontrada, cair no componente de NotFound */}
+		<Route path="/*" component={NotFound}/>
+	</Switch>
+};
 
 export default Main;
