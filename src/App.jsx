@@ -22,7 +22,7 @@ class App extends Component {
 
                 <footer className="container grid-xl my-2">
                     <div className="col-12 text-center">
-                        <p class="text-secondary">Desenvolvido por Mauricio Tasca dos Reis Corr&ecirc;a</p>
+                        <p className="text-secondary">Desenvolvido por Mauricio Tasca dos Reis Corr&ecirc;a</p>
                     </div>
 
                 </footer>
