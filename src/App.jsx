@@ -1,43 +1,39 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
-import RouterOutlet from "./RouterOutlet";
-import { NavLink } from "react-router-dom";
-import { instanceOf } from 'prop-types';
-import { Cookies, withCookies } from 'react-cookie';
+import { NavLink } from 'react-router-dom';
+import RouterOutlet from './RouterOutlet';
 
-class App extends Component {
-	static propTypes = {
-		cookies: instanceOf(Cookies).isRequired
-	};
+const App = () => (
+  <Fragment>
+    <header className="container grid-xl my-2 navbar">
+      <section className="navbar-section">
+        <NavLink to="/" className="navbar-brand mr-2">
+          Gerenciador Financeiro
+        </NavLink>
+      </section>
 
-	render() {
-		const {cookies} = this.props;
+      <section className="navbar-section">
+        <NavLink to="/movimentacoes" className="btn btn-link">
+          Movimentações
+        </NavLink>
+        <NavLink to="/logout" className="btn btn-primary">
+          Logout
+        </NavLink>
+      </section>
 
-		return (
-			<Fragment>
-				<header className="container grid-xl my-2 navbar">
-					<section className="navbar-section">
-						<NavLink to="/" className="navbar-brand mr-2">Gerenciador Financeiro</NavLink>
-					</section>
+    </header>
 
-					<section className="navbar-section">
-						<NavLink to="/movimentacoes" className="btn btn-link">Movimentações</NavLink>
-						<NavLink to="/logout" className="btn btn-primary">Logout</NavLink>
-					</section>
+    <RouterOutlet />
 
-				</header>
+    <footer className="container grid-xl my-2">
+      <div className="col-12 text-center">
+        <p className="text-secondary">
+          Desenvolvido por Mauricio Tasca dos Reis Corr&ecirc;a
+        </p>
+      </div>
 
-				<RouterOutlet cookies={cookies}/>
+    </footer>
+  </Fragment>
+);
 
-				<footer className="container grid-xl my-2">
-					<div className="col-12 text-center">
-						<p className="text-secondary">Desenvolvido por Mauricio Tasca dos Reis Corr&ecirc;a</p>
-					</div>
-
-				</footer>
-			</Fragment>
-		);
-	}
-}
-
-export default withCookies(App);
+export default App;

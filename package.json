@@ -15,7 +15,8 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src --fix; exit 0"
   },
   "proxy": "http://localhost:5000",
   "author": "Mauricio Tasca dos Reis Correa",
@@ -37,5 +38,12 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "spectre.css": "^0.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
   }
 }
