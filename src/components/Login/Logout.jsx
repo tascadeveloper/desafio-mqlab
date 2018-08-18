@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { performLogout } from "./loginActions";
-import connect from "react-redux/es/connect/connect";
+import { connect }from "react-redux";
 import { instanceOf } from "prop-types";
 import { Cookies, withCookies } from "react-cookie";
 
