@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { instanceOf } from 'prop-types';
+import { instanceOf, PropTypes } from 'prop-types';
 import { performLogin } from './loginActions';
 
 class Login extends Component {
   static propTypes = {
     performLogin: instanceOf(performLogin).isRequired,
-    isLoadingLogin: 'boolean'.isRequired,
+    isLoadingLogin: PropTypes.isRequired,
   };
 
   efetuarLogin = () => {
@@ -50,10 +50,8 @@ class Login extends Component {
                     Entrar
                   </button>
                 </div>
-
               </div>
             )}
-
           </div>
         </div>
       </div>
