@@ -1,8 +1,9 @@
 const express = require('express');
+
 const router = express.Router({});
 
-router.use(function timeLog(req, res, next) {
-  console.log('Other routes - '+ req.originalUrl +' - Time: ', Date.now());
+router.use((req, res, next) => {
+  console.log(`Other routes - ${req.originalUrl} - Time: `, Date.now());
   next();
 });
 
@@ -12,4 +13,3 @@ router.get('*', (req, res) => {
 });
 
 module.exports = router;
-

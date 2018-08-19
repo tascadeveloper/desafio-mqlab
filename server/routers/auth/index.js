@@ -1,8 +1,9 @@
 const express = require('express');
+
 const router = express.Router({});
 
-router.use(function timeLog(req, res, next) {
-  console.log('Auth routes - '+ req.originalUrl +' - Time: ', Date.now());
+router.use((req, res, next) => {
+  console.log(`Auth routes - ${req.originalUrl} - Time: `, Date.now());
   next();
 });
 
@@ -25,4 +26,3 @@ router.post('/logout', (req, res) => {
 });
 
 module.exports = router;
-
