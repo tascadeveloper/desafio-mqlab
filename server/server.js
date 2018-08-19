@@ -10,6 +10,7 @@ if (process.env.NODE_ENV !== 'production') {
 const app = express();
 const authRouter = require('./routers/auth');
 const otherRouter = require('./routers/other');
+const usuarioRouter = require('./routers/usuario');
 
 // Valor inicial de 100kb, ajustar conforme demanda
 app.use(bodyParser.json({ limit: '100kb' }));
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 criarColecoesBanco();
 
 app.use('/auth', authRouter);
+app.use('/api/usuario', usuarioRouter);
 app.use('/', otherRouter);
 
 
