@@ -1,5 +1,5 @@
 module.exports = {
-  "extends": "react-app",
+  "extends": "airbnb",
   "rules":{
     // allow console and debugger in development
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,

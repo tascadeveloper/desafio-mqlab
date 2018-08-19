@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { instanceOf, PropTypes } from 'prop-types';
+import { instanceOf, bool } from 'prop-types';
 import { performLogin } from './loginActions';
 
 class Login extends Component {
   static propTypes = {
     performLogin: instanceOf(performLogin).isRequired,
-    isLoadingLogin: PropTypes.isRequired,
+    isLoadingLogin: bool.isRequired,
   };
 
   efetuarLogin = () => {
@@ -30,23 +30,23 @@ class Login extends Component {
             {isLoadingLogin ? <div className="loading loading-lg" /> : (
               <div className="empty-action column col-4 centered">
                 <div className="form-group text-left">
-                  <label className="form-label" htmlFor="usuario">
+                  <label htmlFor="usuario" className="form-label">
                     Usuário
+                    <input className="form-input" type="text" id="usuario" />
                   </label>
-                  <input className="form-input" type="text" id="usuario" />
 
-                  <label className="form-label" htmlFor="senha">
+                  <label htmlFor="senha" className="form-label">
                     Senha
+                    <input className="form-input" type="password" id="senha" />
                   </label>
-                  <input className="form-input" type="password" id="senha" />
 
-                  <label className="form-checkbox">
-                    <input type="checkbox" />
+                  <label htmlFor="lembrar" className="form-checkbox">
+                    <input id="lembrar" type="checkbox" />
                     <i className="form-icon" />
                     {' '}
                     Lembrar Senha
                   </label>
-                  <button onClick={this.efetuarLogin} className="btn btn-primary btn-block my-1">
+                  <button type="button" onClick={this.efetuarLogin} className="btn btn-primary btn-block my-1">
                     Entrar
                   </button>
                 </div>

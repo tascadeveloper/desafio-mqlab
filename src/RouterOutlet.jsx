@@ -8,11 +8,11 @@ import Logout from './components/Login/Logout';
 
 const Main = () => (
   <Switch>
-      <ProtectedRoute exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/logout" component={Logout} />
-      {/* Se nenhuma rota for encontrada, cair no componente de NotFound */}
-      <Route path="/*" component={NotFound} />
+    <ProtectedRoute exact path="/" component={Home} />
+    <Route exact path="/login" component={Login} />
+    <Route exact path="/logout" component={Logout} />
+    {/* Se nenhuma rota for encontrada, cair no componente de NotFound */}
+    <Route path="/*" component={NotFound} />
   </Switch>
 );
 
