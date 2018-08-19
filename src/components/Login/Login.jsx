@@ -27,7 +27,7 @@ class Login extends Component {
             <p className="empty-title h5">
               Bem vindo ao Gerenciador Financeiro
             </p>
-            {isLoadingLogin ? <div className="loading loading-lg" style={{ height: 216 }} /> : (
+            {isLoadingLogin ? <div className="loading loading-lg" /> : (
               <div className="empty-action column col-4 centered">
                 <div className="form-group text-left">
                   <label className="form-label" htmlFor="usuario">

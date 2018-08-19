@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import RouterOutlet from './RouterOutlet';
 
 const App = () => (
@@ -36,4 +36,4 @@ const App = () => (
   </Fragment>
 );
 
-export default App;
+export default withRouter(App);
