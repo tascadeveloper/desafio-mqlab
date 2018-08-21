@@ -13,6 +13,9 @@ const App = () => (
       </section>
 
       <section className="navbar-section">
+        <NavLink to="/usuario" className="btn btn-link">
+          Usuários
+        </NavLink>
         <NavLink to="/movimentacoes" className="btn btn-link">
           Movimentações
         </NavLink>

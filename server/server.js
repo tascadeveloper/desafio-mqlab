@@ -13,7 +13,7 @@ const otherRouter = require('./routers/other');
 const usuarioRouter = require('./routers/usuario');
 
 // Valor inicial de 100kb, ajustar conforme demanda
-app.use(bodyParser.json({ limit: '100kb' }));
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');

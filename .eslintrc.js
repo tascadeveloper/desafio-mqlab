@@ -1,6 +1,6 @@
 module.exports = {
   "extends": "airbnb",
-  "rules":{
+  "rules": {
     // allow console and debugger in development
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
@@ -13,11 +13,12 @@ module.exports = {
     "it": true,
     "xdescribe": true,
     "xit": true,
+    "Headers": true,
     "navigator": true,
     "document": true,
     "window": true,
     "React": true,
     "FormData": true,
-    "fetch":true,
+    "fetch": true,
   }
 };

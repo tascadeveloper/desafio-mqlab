@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { instanceOf, bool } from 'prop-types';
+import { bool, func } from 'prop-types';
 import { performLogin } from './loginActions';
 
 class Login extends Component {
   static propTypes = {
-    performLogin: instanceOf(performLogin).isRequired,
+    performLogin: func.isRequired,
     isLoadingLogin: bool.isRequired,
   };
 

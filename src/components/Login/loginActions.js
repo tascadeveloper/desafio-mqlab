@@ -34,13 +34,14 @@ export const logoutActionSuccess = logoutData => ({
 export function performLogin(userCredentials) {
   return (dispatch) => {
     dispatch(loginActionBegin());
-    const data = new FormData();
-    data.append('json', JSON.stringify(userCredentials));
 
     fetch('/auth/login',
       {
         method: 'POST',
-        body: data,
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+        body: JSON.stringify(userCredentials),
       })
       .then(res => res.json())
       .then((loginData) => {

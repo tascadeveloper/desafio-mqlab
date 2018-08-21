@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { instanceOf, bool } from 'prop-types';
+import { instanceOf, bool, func } from 'prop-types';
 import { Cookies, withCookies } from 'react-cookie';
 import { performLogout } from './loginActions';
 
 class Logout extends Component {
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired,
-    performLogout: instanceOf(performLogout).isRequired,
+    performLogout: func.isRequired,
     isLoadingLogout: bool.isRequired,
   };
 
