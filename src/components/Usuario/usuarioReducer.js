@@ -35,7 +35,6 @@ export default function usuarioReducer(state = initialState, action) {
     case USUARIO_CLEAR_BEGIN:
       return {
         ...state,
-        ...action.payload,
       };
 
     case USUARIO_CLEAR_END:

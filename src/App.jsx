@@ -16,7 +16,7 @@ const App = () => (
         <NavLink to="/usuario" className="btn btn-link">
           Usuários
         </NavLink>
-        <NavLink to="/movimentacoes" className="btn btn-link">
+        <NavLink to="/movimentacao" className="btn btn-link">
           Movimentações
         </NavLink>
         <NavLink to="/logout" className="btn btn-primary">
