@@ -18,7 +18,7 @@ class Login extends Component {
     const { isLoadingLogin } = this.props;
 
     return (
-      <div className="app-content container grid-xl">
+      <div id="login-wrapper" className="app-content container grid-xl">
         <div className="column col-12 col-gapless px-0">
           <div className="empty">
             <div className="empty-icon">

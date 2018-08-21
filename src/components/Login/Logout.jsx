@@ -29,7 +29,7 @@ class Logout extends Component {
   render() {
     const { isLoadingLogout } = this.props;
     return (
-      <div className="container grid-xl">
+      <div id="logout-wrapper" className="container grid-xl">
         <div className="column col-12 col-gapless px-0">
           <div className="empty">
             {isLoadingLogout

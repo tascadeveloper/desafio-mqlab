@@ -61,7 +61,7 @@ class Usuario extends Component {
     const { isLoadingUsuarioCreate, usuarioData } = this.props;
 
     return (
-      <div id="usuario-wrapper" className="container grid-xl bg-gray p-2">
+      <div id="usuario-wrapper" className="app-content container grid-xl bg-gray">
         <div className="column col-6 centered col-gapless">
           <h3>Cadastro de Usuário</h3>
         </div>

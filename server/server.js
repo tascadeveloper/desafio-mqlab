@@ -11,6 +11,7 @@ const app = express();
 const authRouter = require('./routers/auth');
 const otherRouter = require('./routers/other');
 const usuarioRouter = require('./routers/usuario');
+const movimentacaoRouter = require('./routers/movimentacao');
 
 // Valor inicial de 100kb, ajustar conforme demanda
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ criarColecoesBanco();
 
 app.use('/auth', authRouter);
 app.use('/api/usuario', usuarioRouter);
+app.use('/api/movimentacao', movimentacaoRouter);
 app.use('/', otherRouter);
 
 
